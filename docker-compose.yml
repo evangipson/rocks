@@ -1,0 +1,7 @@
+name: ${PROJECT__NAME}
+
+services:
+  server:
+    image: ${PROJECT__NAME}:${PROJECT__VERSION}-latest
+    ports:
+      - ${PROJECT__PORT}:${PROJECT__PORT}
