@@ -1,12 +1,14 @@
-//! # rust_di
-//! rust_di is a basic web server written completely in Rust, which exposes an address and port,
-//! and returns some basic html over http to a client.
+//! # rocks
+//! rocks is a **r**ust d**ock**erized basic web **s**erver (**r**ust d**ock**er **s**erver),
+//! which exposes an address and port, and returns some basic html over http to a client.
 //!
-//! ## Running rust_di
-//! 1. Change directory to wherever rust_di was installed
+//! it also creates a docker image when `cargo build` or `cargo run` is run.
+//!
+//! ## Running rocks
+//! 1. Change directory to wherever rocks was installed
 //! 1. In the terminal, run `cargo build` or `cargo run`
 //!     - This will create a docker image for you
-//! 1. rust_di will announce what ip address and port it's listening on
+//! 1. rocks will announce what ip address and port it's listening on
 
 /// [`builders`] is a collection of functionality
 /// for building new [`types`], so type members can

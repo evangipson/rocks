@@ -1,6 +1,6 @@
-use rust_di::services::server::run_server;
+use rocks::services::server::run_server;
 
-/// [`main`] is the entry point for [`rust_di`].
+/// [`main`] is the entry point for [`rocks`].
 ///
 /// it will use [`run_server`] to begin the server.
 fn main() {

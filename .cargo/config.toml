@@ -1,5 +1,5 @@
 [env]
 IP_ADDR="0.0.0.0"
 PORT="5702"
-NAME="rust-di"
+NAME="rocks"
 VERSION="0.0.1"

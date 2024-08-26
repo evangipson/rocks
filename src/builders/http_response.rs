@@ -7,8 +7,8 @@ use crate::types::http_status::HttpStatus;
 ///
 /// # example
 /// ```rust
-/// use rust_di::types::http_status::HttpStatus;
-/// use rust_di::builders::http_response::create_http_response;
+/// use rocks::types::http_status::HttpStatus;
+/// use rocks::builders::http_response::create_http_response;
 ///
 /// fn get_http_response(return_code: HttpStatus, content: &str) -> String {
 ///     create_http_response(return_code, content)

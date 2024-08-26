@@ -2,7 +2,7 @@
 FROM rust:1.78.0-buster as builder
 
 # Set the working directory
-WORKDIR /usr/src/rust-di
+WORKDIR /usr/src/rocks
 
 # Copy the Rust application
 COPY ./src ./src
@@ -21,7 +21,7 @@ FROM debian:bullseye-slim
 RUN apt-get update && rm -rf /var/lib/apt/lists/*
 
 # Copy the build over from the builder image
-COPY --from=builder /usr/local/cargo/bin/rust-di /usr/local/bin/rust-di
+COPY --from=builder /usr/local/cargo/bin/rocks /usr/local/bin/rocks
 
 # Run the Rust application
-CMD ["rust-di"]
+CMD ["rocks"]

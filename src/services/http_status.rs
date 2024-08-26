@@ -13,8 +13,8 @@ impl HttpStatusService for HttpStatus {
     ///
     /// # example
     /// ```rust
-    /// use rust_di::services::http_status::HttpStatusService;
-    /// use rust_di::types::http_status::HttpStatus;
+    /// use rocks::services::http_status::HttpStatusService;
+    /// use rocks::types::http_status::HttpStatus;
     ///
     /// fn get_http_status_header(status: HttpStatus) -> String {
     ///     status.get_http_status()

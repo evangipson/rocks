@@ -31,7 +31,7 @@ fn write_response_to_client(mut stream: TcpStream) {
 ///
 /// # example
 /// ```rust
-/// use rust_di::services::server::run_server;
+/// use rocks::services::server::run_server;
 ///
 /// fn some_method() {
 ///     run_server();
@@ -43,7 +43,7 @@ pub fn run_server() -> std::io::Result<()> {
     let listener = TcpListener::bind(format!("{env_ip_addr}:{env_port}"))?;
 
     // accept connections and process them serially
-    println!("rust-di is listening for requests at http://{env_ip_addr}:{env_port}");
+    println!("rocks is listening for requests at http://{env_ip_addr}:{env_port}");
     for stream in listener.incoming() {
         write_response_to_client(stream?);
     }
