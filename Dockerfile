@@ -1,14 +1,14 @@
 # Get the latest rust builder image
-FROM rust:1.78.0-buster as builder
+FROM rust:1.78.0-buster AS builder
 
 # Set the working directory
 WORKDIR /usr/src/rocks
 
 # Copy the Rust application
-COPY ./src ./src
-COPY ./Cargo.toml .
-COPY ./.cargo/config.toml ./.cargo/
-COPY ./.env .
+COPY src ./src
+COPY Cargo.toml .
+COPY .cargo/config.docker.toml ./.cargo/config.toml
+COPY .env .
 
 # Build the Rust application
 RUN cargo install --path .

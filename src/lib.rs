@@ -1,6 +1,6 @@
 //! # rocks
 //! rocks is a **r**ust d**ock**erized basic web **s**erver (**r**ust d**ock**er **s**erver),
-//! which exposes an address and port, and returns some basic html over http to a client.
+//! which exposes an address and port, and returns some basic response over TCP or UDP.
 //!
 //! it also creates a docker image when `cargo build` or `cargo run` is run.
 //!
@@ -31,8 +31,13 @@ pub mod services {
 
     /// [`services::server`](crate::services::server)
     /// contains all the [`services`](crate::services) which
-    /// create and leverage the server.
-    pub mod server;
+    /// create and leverage a TCP server.
+    pub mod tcp_server;
+
+    /// [`services::server`](crate::services::server)
+    /// contains all the [`services`](crate::services) which
+    /// create and leverage a UDP server.
+    pub mod udp_server;
 }
 
 /// [`types`] is a collection of `struct` and `enum`
@@ -43,4 +48,21 @@ pub mod types {
     /// contains all the [`types`](crate::types) for anything
     /// relating to an http status.
     pub mod http_status;
+}
+
+/// [`providers`] is a collection of functions that
+/// will provide data from external sources.
+pub mod providers {
+    /// [`providers::environment`](crate::providers::environment)
+    /// contains all the values by pulling from the `config.toml` file.
+    pub mod environment;
+}
+
+/// [`contracts`] is a collection of `trait` objects
+/// which are leveraged by multiple [`services`].
+pub mod contracts {
+    /// [`contracts::rocks_server`](crate::contracts::rocks_server)
+    /// contains all the contract information for what a server
+    /// should do, regardless of server type (TCP/UDP).
+    pub mod rocks_server;
 }
