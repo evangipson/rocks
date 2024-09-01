@@ -1,5 +1,6 @@
 [env]
-IP_ADDR="0.0.0.0"
-PORT="5702"
-NAME="rocks"
-VERSION="0.0.1"
+IP_ADDR = "0.0.0.0"
+PORT = "5702"
+NAME = "rocks"
+VERSION = "0.0.1"
+WORKDIR = "/usr/local/bin"

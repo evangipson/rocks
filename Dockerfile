@@ -8,6 +8,7 @@ WORKDIR /usr/src/rocks
 COPY src ./src
 COPY Cargo.toml .
 COPY .cargo/config.docker.toml ./.cargo/config.toml
+COPY .cargo/server-config.toml ./.cargo/server-config.toml
 COPY .env .
 
 # Build the Rust application
@@ -22,6 +23,7 @@ RUN apt-get update && rm -rf /var/lib/apt/lists/*
 
 # Copy the build over from the builder image
 COPY --from=builder /usr/local/cargo/bin/rocks /usr/local/bin/rocks
+COPY --from=builder /usr/src/rocks/.cargo/server-config.toml /usr/local/bin/.cargo/server-config.toml
 
 # Run the Rust application
 CMD ["rocks"]

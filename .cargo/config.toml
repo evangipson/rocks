@@ -1,5 +1,6 @@
 [env]
-IP_ADDR="127.0.0.1"
-PORT="5702"
-NAME="rocks"
-VERSION="0.0.1"
+IP_ADDR = "127.0.0.1"
+PORT = "5702"
+NAME = "rocks"
+VERSION = "0.0.1"
+WORKDIR = "."

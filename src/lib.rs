@@ -48,6 +48,14 @@ pub mod types {
     /// contains all the [`types`](crate::types) for anything
     /// relating to an http status.
     pub mod http_status;
+
+    pub mod http_method;
+
+    pub mod server_endpoint;
+
+    pub mod server;
+
+    pub mod server_config;
 }
 
 /// [`providers`] is a collection of functions that
@@ -56,13 +64,6 @@ pub mod providers {
     /// [`providers::environment`](crate::providers::environment)
     /// contains all the values by pulling from the `config.toml` file.
     pub mod environment;
-}
 
-/// [`contracts`] is a collection of `trait` objects
-/// which are leveraged by multiple [`services`].
-pub mod contracts {
-    /// [`contracts::rocks_server`](crate::contracts::rocks_server)
-    /// contains all the contract information for what a server
-    /// should do, regardless of server type (TCP/UDP).
-    pub mod rocks_server;
+    pub mod server_config;
 }

@@ -1,12 +1,10 @@
-use rocks::contracts::rocks_server::RocksServer;
-use std::net::TcpStream;
+extern crate rocks;
+use rocks::{providers::server_config::get_server_config, services::tcp_server::run_server};
 
 /// [`main`] is the entry point for [`rocks`].
 ///
 /// it will use [`run_server`] to begin the server.
 fn main() {
-    match TcpStream::run_server() {
-        Ok(()) => println!("server started"),
-        Err(_) => println!("server failed to start"),
-    }
+    let server_config = get_server_config();
+    let _ = run_server(server_config.endpoints);
 }

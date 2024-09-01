@@ -1,0 +1,10 @@
+[endpoints]
+[[endpoints.test]]
+path = "/test"
+method = "GET"
+response = "test page"
+
+[[endpoints.testpost]]
+path = "/post"
+method = "POST"
+response = "for posters only!"
